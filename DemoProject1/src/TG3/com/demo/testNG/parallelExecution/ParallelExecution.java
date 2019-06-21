@@ -1,0 +1,53 @@
+package TG3.com.demo.testNG.parallelExecution;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
+public class ParallelExecution {
+	
+	
+	
+	
+	@Test(groups="parallelTests")
+	public void m1() throws MalformedURLException {
+		LaunchBrowser("https://www.snapdeal.com");
+	}
+	
+	@Test(groups="parallelTests")
+	public void m2() throws MalformedURLException {
+		LaunchBrowser("https://www.flipkart.com");
+	}
+	
+	@Test(groups="parallelTests")
+	public void m3() throws MalformedURLException {
+		LaunchBrowser("https://www.amazon.com");
+	}
+	
+	@Test(groups="parallelTests")
+	public void m14() throws MalformedURLException {
+		LaunchBrowser("https://www.rediff.com");
+	}
+	
+	@Test(groups="parallelTests")
+	public void m5() throws MalformedURLException {
+		LaunchBrowser("https://www.quora.com");
+	}
+
+	
+	public void LaunchBrowser(String url) throws MalformedURLException {
+		
+		
+ 		String Node = "http://localhost:4444/wd/hub";
+ 		DesiredCapabilities cap = DesiredCapabilities.chrome();
+ 
+ 		WebDriver driver = new RemoteWebDriver(new URL(Node), cap);
+ 
+ 		driver.navigate().to(url);		
+		
+	}
+}
