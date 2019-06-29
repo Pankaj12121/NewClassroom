@@ -19,11 +19,11 @@ public class PageFactoryDemo {
 		public PageFactoryDemo() {
 		}
 
-		public PageFactoryDemo(WebDriver driver) {
+		/*public PageFactoryDemo(WebDriver driver) {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			PageFactory.initElements(driver, this);
 			this.driver=driver;
-		}
+		}*/
 		/*-------Login elements---------------------------*/
 		@FindBy(id = "txtUsername")
 		WebElement userName;
@@ -223,7 +223,7 @@ public class PageFactoryDemo {
 		public void launchDriver() {
 			System.setProperty("webdriver.chrome.driver", "\\Grid\\chromedriver.exe");
 			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get("https://opensource-demo.orangehrmlive.com");
 		}
 
