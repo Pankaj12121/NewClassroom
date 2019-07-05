@@ -3,6 +3,7 @@ package TG2.com.demo.testNG.parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -12,6 +13,7 @@ public class TestBaseSetup {
 	static WebDriver driver;
 	static String driverPath = "\\Grid\\";
 
+	
 	public WebDriver getDriver() {
 		return driver;
 	}
@@ -32,7 +34,7 @@ public class TestBaseSetup {
 		return driver;
 	}
 
-	private static WebDriver initChromeDriver(String appURL) {
+	private  WebDriver initChromeDriver(String appURL) {
 		System.out.println("Launching google chrome with new profile..");
 		System.setProperty("webdriver.chrome.driver", driverPath
 				+ "chromedriver.exe");
@@ -42,7 +44,7 @@ public class TestBaseSetup {
 		return driver;
 	}
 
-	private static WebDriver initFirefoxDriver(String appURL) {
+	private  WebDriver initFirefoxDriver(String appURL) {
 		System.out.println("Launching Firefox browser..");
 		System.setProperty("webdriver.gecko.driver", driverPath
 				+ "geckodriver.exe");

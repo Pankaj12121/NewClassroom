@@ -73,7 +73,7 @@ public class DataProviderWithExcel {
 		//ExcelUtils.setExcelFile("C:\\Users\\pankajs\\Desktop\\TestData.xlsx","Sheet1");
 		//sTestCaseName = configProp.getProperty("TCID");
 		//iTestCaseRow = ExcelUtils.getRowContains(sTestCaseName,0);
-		Object[][] testObjArray = excelUtils.getTableArray("C:\\Users\\pankajs\\Desktop\\TestData.xlsx","Sheet1");
+		Object[][] testObjArray = excelUtils.getTableArray("C:\\Users\\pankajs.yogi\\Desktop\\TestData.xlsx","Sheet1");
 		System.out.println("Data provider fetched the data from excel for testCase "+ sTestCaseName);
 		return testObjArray;
 	}

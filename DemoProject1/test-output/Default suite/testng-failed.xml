@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="WD13.com.demo.pageFactory.PageFactoryDemo">
+      <class name="TG2.com.demo.testNG.parameters.ParametersInTestNG">
         <methods>
-          <include name="launchDriver"/>
-          <include name="sample"/>
+          <include name="parameters"/>
         </methods>
-      </class> <!-- WD13.com.demo.pageFactory.PageFactoryDemo -->
+      </class> <!-- TG2.com.demo.testNG.parameters.ParametersInTestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

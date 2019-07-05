@@ -20,7 +20,7 @@ public class AssertVsVerify {
 		System.setProperty("webdriver.chrome.driver","\\Grid\\chromedriver.exe");
 		driver = new ChromeDriver();
 		Report("Driver Launched");
-		String baseUrl = "http://opensource.demo.orangehrmlive.com/";
+		String baseUrl = "https://opensource-demo.orangehrmlive.com/";
 		String expectedTitle = "HR Management System | OrangeHRM l HR Management Software1";
 		String actualTitle = "";
 		String ExpectedWelcomeUser="Contact Us1";
@@ -92,7 +92,7 @@ public class AssertVsVerify {
 		userName.sendKeys("Admin");
 		Report("UserName entered "+ "Admin");
 		password.sendKeys("admin");
-		Report("Password entered "+ "admin");
+		Report("Password entered "+ "admin123");
 		submit.click();
 		Report("submit button clicked");
 	}

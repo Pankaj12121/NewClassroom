@@ -10,9 +10,6 @@ import org.testng.annotations.Test;
 
 public class ParallelExecution {
 	
-	
-	
-	
 	@Test(groups="parallelTests")
 	public void m1() throws MalformedURLException {
 		LaunchBrowser("https://www.snapdeal.com");
