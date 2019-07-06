@@ -1,5 +1,6 @@
 package TG1.com.demo.testNG.Base;
 
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -14,8 +15,9 @@ import org.testng.annotations.Test;
 public class TestNGFlow_1 {
 	@BeforeMethod
 	public void beforeMethod() {
-		System.out.println("Fetch testcase data from the DB");
-		System.out.println(" Before Method will execute before every test method");
+		Reporter.log("Fetch testcase data from the DB");
+		Reporter.log(" Before Method will execute before every test method");
+		
 	}
 	@AfterMethod
 	public void afterMethod() {
@@ -54,11 +56,12 @@ public class TestNGFlow_1 {
 	}
 	@Test(dataProvider="Authentication",priority =2)
 	public void testCase1(String sUsername, String sPassword) {
-		System.out.println(sUsername+","+ sPassword);
-		System.out.println("This is my First Test Case 1");
+		Reporter.log(sUsername+","+ sPassword);
+		Reporter.log("This is my First Test Case 1");
 	}
 	@Test(priority =1)
 	public void testCase2() {
+		int c= 10/0;
 		System.out.println("This is my Second Test Case 2");
 	}
 	@DataProvider(name = "Authentication")

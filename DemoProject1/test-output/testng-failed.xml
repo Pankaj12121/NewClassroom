@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="methods">
-  <parameter name="browsername" value="chrome"/>
-  <parameter name="browserversion" value="6"/>
-  <parameter name="platform" value="windows"/>
-  <test name="Chrome(failed)" parallel="methods">
-    <method-selectors>
-      <method-selector>
-        <script language="BeanShell">
-          <![CDATA[
-         			groups.containsKey("parallel")
-       			]]>
-        </script>
-      </method-selector>
-    </method-selectors>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.demo.testNG.Random.ParallelExecution">
+      <class name="TG1.com.demo.testNG.Base.RunTimeExceptionInTestNG_5">
         <methods>
-          <include name="m5"/>
-          <include name="m4"/>
-          <include name="m3"/>
+          <include name="withoutException"/>
         </methods>
-      </class> <!-- com.demo.testNG.Random.ParallelExecution -->
+      </class> <!-- TG1.com.demo.testNG.Base.RunTimeExceptionInTestNG_5 -->
     </classes>
-  </test> <!-- Chrome(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

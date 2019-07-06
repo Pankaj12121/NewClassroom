@@ -11,7 +11,7 @@
 		<method-selectors>
 			<method-selector>
 				<script language="beanshell"><![CDATA[
-         			groups.containsKey("parallel")
+         			groups.containsKey("parameters")
        			]]></script>
 			</method-selector>
 		</method-selectors>

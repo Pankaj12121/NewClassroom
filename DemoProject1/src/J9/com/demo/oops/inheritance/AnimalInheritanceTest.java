@@ -1,4 +1,4 @@
-package J9.com.demo.oops.inheritance;
+ package J9.com.demo.oops.inheritance;
 
 public class AnimalInheritanceTest {
 
