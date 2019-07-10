@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TG2.com.demo.testNG.parameters.ParametersInTestNG">
+      <class name="WD2.com.demo.webdriver.xpath.xpathExamples">
         <methods>
-          <include name="parameters"/>
+          <include name="launchDriver"/>
         </methods>
-      </class> <!-- TG2.com.demo.testNG.parameters.ParametersInTestNG -->
+      </class> <!-- WD2.com.demo.webdriver.xpath.xpathExamples -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="methods">
-  <parameter name="appURL" value="http://newtours.demoaut.com/"/>
-  <parameter name="browsername" value="Chrome"/>
-  <parameter name="browserversion" value="6"/>
-  <parameter name="platform" value="windows"/>
-  <test name="Chrome(failed)" parallel="methods">
-    <method-selectors>
-      <method-selector>
-        <script language="BeanShell">
-          <![CDATA[
-         			groups.containsKey("TC001")
-       			]]>
-        </script>
-      </method-selector>
-    </method-selectors>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="TG2.com.demo.testNG.parameters.ParametersInTestNG">
+      <class name="WD2.com.demo.webdriver.xpath.xpathExamples">
         <methods>
-          <include name="parameters" invocation-numbers="0"/>
+          <include name="launchDriver"/>
         </methods>
-      </class> <!-- TG2.com.demo.testNG.parameters.ParametersInTestNG -->
+      </class> <!-- WD2.com.demo.webdriver.xpath.xpathExamples -->
     </classes>
-  </test> <!-- Chrome(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

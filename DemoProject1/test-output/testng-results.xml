@@ -2,40 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12879" started-at="2019-07-05T13:08:53Z" finished-at="2019-07-05T13:09:06Z">
+  <suite name="Default suite" duration-ms="22413" started-at="2019-07-10T12:33:01Z" finished-at="2019-07-10T12:33:24Z">
     <groups>
-      <group name="TestNG">
-        <method signature="ParametersInTestNG.parameters(java.lang.String, java.lang.String)[pri:0, instance:TG2.com.demo.testNG.parameters.ParametersInTestNG@4b4523f8]" name="parameters" class="TG2.com.demo.testNG.parameters.ParametersInTestNG"/>
-      </group> <!-- TestNG -->
-      <group name="TC001">
-        <method signature="ParametersInTestNG.parameters(java.lang.String, java.lang.String)[pri:0, instance:TG2.com.demo.testNG.parameters.ParametersInTestNG@4b4523f8]" name="parameters" class="TG2.com.demo.testNG.parameters.ParametersInTestNG"/>
-      </group> <!-- TC001 -->
-      <group name="demo">
-        <method signature="ParametersInTestNG.parameters(java.lang.String, java.lang.String)[pri:0, instance:TG2.com.demo.testNG.parameters.ParametersInTestNG@4b4523f8]" name="parameters" class="TG2.com.demo.testNG.parameters.ParametersInTestNG"/>
-      </group> <!-- demo -->
-      <group name="parameters">
-        <method signature="ParametersInTestNG.parameters(java.lang.String, java.lang.String)[pri:0, instance:TG2.com.demo.testNG.parameters.ParametersInTestNG@4b4523f8]" name="parameters" class="TG2.com.demo.testNG.parameters.ParametersInTestNG"/>
-      </group> <!-- parameters -->
     </groups>
-    <test name="Chrome" duration-ms="12879" started-at="2019-07-05T13:08:53Z" finished-at="2019-07-05T13:09:06Z">
-      <class name="TG2.com.demo.testNG.parameters.ParametersInTestNG">
-        <test-method status="PASS" signature="parameters(java.lang.String, java.lang.String)[pri:0, instance:TG2.com.demo.testNG.parameters.ParametersInTestNG@4b4523f8]" name="parameters" duration-ms="12855" started-at="2019-07-05T18:38:53Z" finished-at="2019-07-05T18:39:06Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[https://opensource-demo.orangehrmlive.com]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="22413" started-at="2019-07-10T12:33:01Z" finished-at="2019-07-10T12:33:24Z">
+      <class name="WD2.com.demo.webdriver.xpath.xpathExamples">
+        <test-method status="PASS" signature="launchDriver()[pri:0, instance:WD2.com.demo.webdriver.xpath.xpathExamples@1a968a59]" name="launchDriver" duration-ms="22389" started-at="2019-07-10T18:03:01Z" finished-at="2019-07-10T18:03:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- parameters -->
-      </class> <!-- TG2.com.demo.testNG.parameters.ParametersInTestNG -->
-    </test> <!-- Chrome -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- launchDriver -->
+      </class> <!-- WD2.com.demo.webdriver.xpath.xpathExamples -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
