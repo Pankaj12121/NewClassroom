@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" parallel="methods">
-  <parameter name="appURL" value="http://newtours.demoaut.com/"/>
+  <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com"/>
   <parameter name="browsername" value="Chrome"/>
   <parameter name="browserversion" value="6"/>
   <parameter name="platform" value="windows"/>
@@ -10,17 +10,20 @@
       <method-selector>
         <script language="BeanShell">
           <![CDATA[
-         			groups.containsKey("TC001")
+         			groups.containsKey("parallel")
        			]]>
         </script>
       </method-selector>
     </method-selectors>
     <classes>
-      <class name="TG2.com.demo.testNG.parameters.ParametersInTestNG">
+      <class name="TG3.com.demo.testNG.parallelExecution.ParallelExecution2">
         <methods>
-          <include name="parameters" invocation-numbers="0"/>
+          <include name="m2"/>
+          <include name="m4"/>
+          <include name="m1"/>
+          <include name="m3"/>
         </methods>
-      </class> <!-- TG2.com.demo.testNG.parameters.ParametersInTestNG -->
+      </class> <!-- TG3.com.demo.testNG.parallelExecution.ParallelExecution2 -->
     </classes>
   </test> <!-- Chrome(failed) -->
 </suite> <!-- Failed suite [Suite] -->

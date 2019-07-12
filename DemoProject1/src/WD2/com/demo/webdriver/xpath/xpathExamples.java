@@ -71,9 +71,10 @@ public class xpathExamples {
 		System.setProperty("webdriver.chrome.driver", "\\Grid\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String baseUrl = "https://paytm.com/";
 		driver.get(baseUrl);
+		//PageFactory.initElements(driver, this);
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 		Metro.click();
 		metroRecharge();
@@ -81,6 +82,7 @@ public class xpathExamples {
 		AddMoneyToWallet();
 		AddActualMoneyToWallet();
 		helpCustomer();
+		driver.close();
 	}
 
 	public void metroRecharge() {

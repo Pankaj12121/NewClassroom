@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Suite]" parallel="methods">
+  <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com"/>
+  <parameter name="browsername" value="Chrome"/>
+  <parameter name="browserversion" value="6"/>
+  <parameter name="platform" value="windows"/>
+  <test name="Chrome(failed)" parallel="methods">
+    <method-selectors>
+      <method-selector>
+        <script language="BeanShell">
+          <![CDATA[
+         			groups.containsKey("parallel")
+       			]]>
+        </script>
+      </method-selector>
+    </method-selectors>
     <classes>
-      <class name="WD2.com.demo.webdriver.xpath.xpathExamples">
+      <class name="TG3.com.demo.testNG.parallelExecution.ParallelExecution2">
         <methods>
-          <include name="launchDriver"/>
+          <include name="m2"/>
+          <include name="m4"/>
+          <include name="m1"/>
+          <include name="m3"/>
         </methods>
-      </class> <!-- WD2.com.demo.webdriver.xpath.xpathExamples -->
+      </class> <!-- TG3.com.demo.testNG.parallelExecution.ParallelExecution2 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Chrome(failed) -->
+</suite> <!-- Failed suite [Suite] -->
