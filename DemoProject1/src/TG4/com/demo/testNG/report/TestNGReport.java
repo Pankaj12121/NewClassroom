@@ -19,6 +19,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.Reporter;
 import org.testng.TestRunner;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class TestNGReport {
 	String TestNGReportPath="E://Grid//TestRunReport";
 	String ExpectedLoginText="Use UrbanPro login";
 	String ActulLoginText;
-	@Test
+	@Test (groups="job-2")
 	public void m1() throws Exception {
 		LaunchBrowser("https://www.urbanpro.com/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -88,6 +89,12 @@ public class TestNGReport {
 		TestRunner runner = (TestRunner) ctx;
 
 		runner.setOutputDirectory(TestNGReportPath);
+	}
+	
+	@AfterTest
+	public void driverclose() {
+		if (driver != null)
+			driver.close();
 	}
 
 }

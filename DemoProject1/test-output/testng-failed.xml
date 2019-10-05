@@ -5,25 +5,23 @@
   <parameter name="browsername" value="Chrome"/>
   <parameter name="browserversion" value="6"/>
   <parameter name="platform" value="windows"/>
-  <test name="Chrome(failed)" parallel="methods">
+  <test name="TestSuite-2(failed)" parallel="methods">
     <method-selectors>
       <method-selector>
         <script language="BeanShell">
           <![CDATA[
-         			groups.containsKey("parallel")
+         			groups.containsKey("job-2")
        			]]>
         </script>
       </method-selector>
     </method-selectors>
     <classes>
-      <class name="TG3.com.demo.testNG.parallelExecution.ParallelExecution2">
+      <class name="TG4.com.demo.testNG.report.TestNGReport">
         <methods>
-          <include name="m2"/>
-          <include name="m4"/>
           <include name="m1"/>
-          <include name="m3"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- TG3.com.demo.testNG.parallelExecution.ParallelExecution2 -->
+      </class> <!-- TG4.com.demo.testNG.report.TestNGReport -->
     </classes>
-  </test> <!-- Chrome(failed) -->
+  </test> <!-- TestSuite-2(failed) -->
 </suite> <!-- Failed suite [Suite] -->
