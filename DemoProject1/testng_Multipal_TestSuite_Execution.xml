@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+<suite name="Suite" parallel="methods" thread-count="5">
+	<parameter name="browsername" value="Chrome" />
+	<parameter name="appURL" value="https://opensource-demo.orangehrmlive.com" />
+	<parameter name="browserversion" value="6" />
+	<parameter name="platform" value="windows" />
+	
+	<test verbose="2" name="TestSuite-1">
+		<packages>
+			<package name="WD13.com.demo.*" />
+		</packages>
+		
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell"><![CDATA[
+         			groups.containsKey("job-1")
+       			]]></script>
+			</method-selector>
+		</method-selectors>
+	</test>
+	
+</suite>
+<suite name="Suite2" parallel="methods" thread-count="5">
+	<parameter name="browsername" value="Chrome" />
+	<parameter name="appURL" value="https://opensource-demo.orangehrmlive.com" />
+	<parameter name="browserversion" value="6" />
+	<parameter name="platform" value="windows" />
+	
+	
+	<test verbose="2" name="TestSuite-2">
+		<packages>
+			<package name="TG4.com.demo.*" />
+		</packages>
+		
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell"><![CDATA[
+         			groups.containsKey("job-2")
+       			]]></script>
+			</method-selector>
+		</method-selectors>
+	</test>
+</suite>
+</suites>
