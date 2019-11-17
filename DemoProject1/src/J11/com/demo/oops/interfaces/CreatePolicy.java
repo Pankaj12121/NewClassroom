@@ -24,13 +24,13 @@ public class CreatePolicy implements PolicyInterface {
 
 	}
 
-	public void issuePolicy(int policyMaxAge,int policyMinAge,int maxSumAssured) {
+	/*public void issuePolicy(int policyMaxAge,int policyMinAge,int maxSumAssured) {
 		System.out.println(policyMaxAge);
 		System.out.println(policyMinAge);
 		System.out.println(maxSumAssured);
 
 		
-	}
+	}*/
 	
 	@Override
 	public void countryScope(String country) {

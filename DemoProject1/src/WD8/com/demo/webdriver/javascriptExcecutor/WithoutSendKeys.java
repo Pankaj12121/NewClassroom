@@ -12,16 +12,33 @@ import org.openqa.selenium.support.ui.Select;
 
 public class WithoutSendKeys {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver","\\Grid\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://google.co.in");
-		WebElement element= driver.findElement(By.name("btnK"));
-		((JavascriptExecutor)driver).executeScript("document.getElementById('lst-ib')."
-				+ "value='Jobs in selenium'");
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		String DomainName = js.executeScript("return document.domain;").toString();	
+        System.out.println("Domain name of the site = "+DomainName);
+        
+        String url = js.executeScript("return document.URL;").toString();			
+        System.out.println("URL of the site = "+url);
+        
+        String TitleName = js.executeScript("return document.title;").toString();			
+        System.out.println("Title of the page = "+TitleName);
+        
+        WebElement element= driver.findElement(By.name("btnK"));
+        WebElement search= driver.findElement(By.name("q"));
+		js.executeScript("arguments[0].value='Jobs in selenium';",search);
 
-		((JavascriptExecutor)driver).executeScript("arguments[0].click();",element);
+		js.executeScript("arguments[0].click();",element);
+		
+		js.executeScript("window.scrollBy(0,600)");
+		
+		Thread.sleep(5000);
 		driver.close();
 
 	}

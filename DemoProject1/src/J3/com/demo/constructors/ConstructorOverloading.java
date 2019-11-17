@@ -11,6 +11,7 @@ public class ConstructorOverloading {
 	    public ConstructorOverloading(String str){
 	        System.out.println("Inside single parameter constructor with String object");
 	    }
+	    
 	    public ConstructorOverloading(int i, int j){
 	        System.out.println("Inside double parameter constructor");
 	    }

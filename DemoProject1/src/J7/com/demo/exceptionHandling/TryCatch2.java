@@ -5,9 +5,9 @@ public class TryCatch2 {
 	public static void main(String[] args) {
 		try{
 			System.out.println("no error here");
-			//int data=50/0;  
+			int data=50/0;  
 		}catch(ArithmeticException e){
-		{System.out.println(e);}  
+		System.out.println(e);
 		System.out.println("rest of the code...");  
 		}catch(NullPointerException e1){
 			System.out.println("data in excel is not proper");

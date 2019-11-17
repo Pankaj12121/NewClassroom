@@ -2,8 +2,6 @@ package J8.com.demo.oops.polymorphism;
 
 public class MethodOverLoading {
 	
-	
-	
 	private static void display(int a){
         System.out.println("Got Integer data. "+a);
     }

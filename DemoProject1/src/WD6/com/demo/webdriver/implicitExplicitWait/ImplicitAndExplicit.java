@@ -16,32 +16,40 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BaseScript {
+public class ImplicitAndExplicit {
+	/*-------Login elements---------------------------*/
+	@FindBy(id = "txtUsername")
 	WebElement userName;
+	@FindBy(name = "txtPassword")
 	WebElement password;
+	@FindBy(className = "button")
 	WebElement submit;
-	WebElement mitem;
+	@FindBy(xpath = "//div[span='Invalid credentials']")
+	WebElement errMsg;
+	
 	static WebDriver driver ;
+	
 	String ExpectedErrorMsg="Invalid credentials";
 	static String Username="Admin";
-	static String Password="admin";
+	static String Password="admin1234";
 	static String browserCloseTrue;
 
 	public static void main(String[] args) {
 		StopWatch watch= new StopWatch();
 		watch.start();
-		BaseScript baseObject= new BaseScript();
+		ImplicitAndExplicit baseObject= new ImplicitAndExplicit();
 		baseObject.launchDriver();
-		baseObject.pageElements();
 		baseObject.loginToHRM(Username, Password);
 		if(!baseObject.verifyLandingPage())
 			baseObject.verifyLogin();
 		watch.stop();
 		System.out.println(watch);
-		//baseObject.closeSession();
+		baseObject.closeSession();
 	}
 	public void launchDriver() {
 		ChromeOptions options = new ChromeOptions();
@@ -57,18 +65,14 @@ public class BaseScript {
 		System.setProperty("webdriver.chrome.driver","\\Grid\\chromedriver.exe");
 		driver = new ChromeDriver(capabilities);
 		/*******************************Implicit Wait*************************************************/		
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		/*******************************Implicit Wait*************************************************/	
-
-		String baseUrl = "http://opensource.demo.orangehrmlive.com/";
+		PageFactory.initElements(driver, this);
+		String baseUrl = "https://opensource-demo.orangehrmlive.com/";
 		driver.get(baseUrl);
 	}
 
-	public void pageElements(){
-		userName= driver.findElement(By.id("txtUsername"));//By id 
-		password= driver.findElement(By.name("txtPassword"));//By name 
-		submit= driver.findElement(By.className("button"));//By name 
-	}
+	
 
 	public void loginToHRM(String uName,String pass){
 		String startUrL= driver.getCurrentUrl().toString();
@@ -86,7 +90,7 @@ public class BaseScript {
 	}
 	public boolean verifyLandingPage() {
 		try{
-			By by=By.xpath("//a[text()='Welcome Admin']");
+			By by=By.linkText("Welcome Admin");//("//a[text()='Welcome Admin']")
 			/*******************************Explicit Wait*************************************************/		
 			if (explicitWait(10, by) != null)
 				/*******************************Explicit Wait*************************************************/	
@@ -97,7 +101,6 @@ public class BaseScript {
 					System.out.println("Login Unsuccessful...");
 
 				}
-			
 	
 		}catch(Exception e){
 			System.out.println("The element'WelCome Admin' could not find on web page");
@@ -106,7 +109,6 @@ public class BaseScript {
 		return false;
 	}
 	public void verifyLogin(){
-		WebElement errMsg= driver.findElement(By.xpath("//div[span='Invalid credentials']"));//By xpath
 		String ActualErrMsg=errMsg.getText();
 
 		if (ActualErrMsg.contentEquals(ExpectedErrorMsg))
@@ -114,53 +116,9 @@ public class BaseScript {
 		else
 			System.out.println("Test case failed");
 	}
-	public static WebDriver getDriver(){
-		return driver;	
-	}
-	public void closeSession(){
-		driver.close();	
-	}
+	
 
-	public void actionMouseOver(By by) throws InterruptedException{
-		WebElement el=driver.findElement(by);
-		System.out.println("Mouseover successful on menu "+el.toString());
-		Actions builder = new Actions(driver);
-		builder.moveToElement( el );
-		builder.perform();
-	}
 
-	public void actionClick(By Level1,By Level2,By Level3) throws InterruptedException{
-		WebElement level1=driver.findElement(Level1);
-		Actions builder = new Actions(driver);
-		builder.moveToElement( level1 ).perform();
-		WebElement level2=driver.findElement(Level2);
-		builder.moveToElement( level2 ).perform();;
-		WebElement level3=driver.findElement(Level3);
-		builder.click(level3).perform();
-		//builder.build().perform();
-		System.out.println("Mouseover and click successful on menu "+level3.toString());
-
-	}
-	public void actionClick(By Level1,By Level2) throws InterruptedException{
-		WebElement level1=driver.findElement(Level1);
-		Actions builder = new Actions(driver);
-		builder.moveToElement( level1 ).perform();
-		WebElement level2=driver.findElement(Level2);
-		builder.moveToElement( level2 ).perform();;
-		builder.click(level2).perform();
-		//builder.build().perform();
-		System.out.println("Mouseover and click successful on menu "+level2.toString());
-
-	}
-	public void actionClick(By Level1) throws InterruptedException{
-		WebElement level1=driver.findElement(Level1);
-		Actions builder = new Actions(driver);
-		builder.moveToElement( level1 ).perform();
-		builder.click(level1).perform();
-		//builder.build().perform();
-		System.out.println("Mouseover and click successful on menu "+level1.toString());
-
-	}
 	public WebElement explicitWait(int waitTime,By by){
 		WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
 		webDriverWait.pollingEvery(10, TimeUnit.MICROSECONDS);
@@ -186,6 +144,13 @@ public class BaseScript {
 		});
 	}
 
+	
+	
+	public void closeSession(){
+		driver.close();	
+	}
+	
+	
 }
 
 

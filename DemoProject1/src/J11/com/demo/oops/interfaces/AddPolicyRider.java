@@ -23,15 +23,11 @@ public class AddPolicyRider implements PolicyInterface{
 		}
 		
 	}
-
-	
-
 	@Override
 	public void countryScope(String country) {
 		System.out.println(country);
 		
 	}
-	
 	public static void main(String[] args) {
 		AddPolicyRider apr= new AddPolicyRider();
 		apr.addPolicyRider(maxRiderSumAssured, minRiderSumAssured);

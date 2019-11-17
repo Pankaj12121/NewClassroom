@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class HashMaPExample {
 
 	public static void main(String args[]) {
-		WebDriver driver =new ChromeDriver();
 		Map<String, Integer> certificationCost = new HashMap<>(); 
 		certificationCost.put("ISTQB", 7000); 
 		certificationCost.put("CSTE", 11000); 
