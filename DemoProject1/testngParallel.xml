@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="methods" thread-count="5">
-	<parameter name="browsername" value="Chrome" />
-	<parameter name="appURL" value="https://opensource-demo.orangehrmlive.com" />
+	<parameter name="browsername" value="chrome" />
 	<parameter name="browserversion" value="6" />
 	<parameter name="platform" value="windows" />
-	
 	<test verbose="2" name="Chrome">
 		<packages>
-			<package name="TG3.com.demo.*" />
+			<package name="com.demo.*" />
 		</packages>
 		
 		<method-selectors>
 			<method-selector>
 				<script language="beanshell"><![CDATA[
-         			groups.containsKey("parallelTests")
+         			groups.containsKey("parameters")
        			]]></script>
 			</method-selector>
 		</method-selectors>

@@ -50,11 +50,7 @@ public class TestNGReport {
 		} catch(AssertionError e) {
 			takeSnapShot();
 		}
-		
-		
-		
 	}
-
 	
 	public void LaunchBrowser(String url) throws MalformedURLException {
 

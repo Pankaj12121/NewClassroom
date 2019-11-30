@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="methods">
-  <parameter name="appURL" value="https://opensource-demo.orangehrmlive.com"/>
-  <parameter name="browsername" value="Chrome"/>
-  <parameter name="browserversion" value="6"/>
-  <parameter name="platform" value="windows"/>
-  <test name="TestSuite-2(failed)" parallel="methods">
-    <method-selectors>
-      <method-selector>
-        <script language="BeanShell">
-          <![CDATA[
-         			groups.containsKey("job-2")
-       			]]>
-        </script>
-      </method-selector>
-    </method-selectors>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="TG4.com.demo.testNG.report.TestNGReport">
+      <class name="TG1.com.demo.testNG.Base.RunTimeExceptionInTestNG_5">
         <methods>
-          <include name="m1"/>
-          <include name="setup"/>
+          <include name="withoutException"/>
         </methods>
-      </class> <!-- TG4.com.demo.testNG.report.TestNGReport -->
+      </class> <!-- TG1.com.demo.testNG.Base.RunTimeExceptionInTestNG_5 -->
     </classes>
-  </test> <!-- TestSuite-2(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

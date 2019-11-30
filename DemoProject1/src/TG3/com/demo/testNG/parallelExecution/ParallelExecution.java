@@ -6,10 +6,13 @@ import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class ParallelExecution {
-	
+	WebDriver driver;
 	@Test(groups="parallelTests")
 	public void m1() throws MalformedURLException {
 		LaunchBrowser("https://www.snapdeal.com");
@@ -42,9 +45,13 @@ public class ParallelExecution {
  		String Node = "http://localhost:4444/wd/hub";
  		DesiredCapabilities cap = DesiredCapabilities.chrome();
  
- 		WebDriver driver = new RemoteWebDriver(new URL(Node), cap);
+ 		driver = new RemoteWebDriver(new URL(Node), cap);
  
  		driver.navigate().to(url);		
 		
+	}
+	@AfterSuite
+	public void closeBrowser() {
+		driver.quit();
 	}
 }

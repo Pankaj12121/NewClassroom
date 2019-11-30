@@ -11,7 +11,7 @@ package J2.com.demo.variables;
 	}
 	
 	public void setMarks(int studMarks) {
-		marks = studMarks;	
+		marks = studMarks;
 	}
 	public void printStud() {
 		System.out.println("Student name : " + name);
