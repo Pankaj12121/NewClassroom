@@ -15,7 +15,7 @@ public class ParallelExecution {
 	WebDriver driver;
 	@Test(groups="parallelTests")
 	public void m1() throws MalformedURLException {
-		LaunchBrowser("https://www.snapdeal.com");
+		LaunchFirefoxBrowser("https://www.snapdeal.com");
 	}
 	
 	@Test(groups="parallelTests")
@@ -44,6 +44,18 @@ public class ParallelExecution {
 		
  		String Node = "http://localhost:4444/wd/hub";
  		DesiredCapabilities cap = DesiredCapabilities.chrome();
+ 
+ 		driver = new RemoteWebDriver(new URL(Node), cap);
+ 
+ 		driver.navigate().to(url);		
+		
+	}
+	
+	public void LaunchFirefoxBrowser(String url) throws MalformedURLException {
+		
+		
+ 		String Node = "http://localhost:4444/wd/hub";
+ 		DesiredCapabilities cap = DesiredCapabilities.firefox();
  
  		driver = new RemoteWebDriver(new URL(Node), cap);
  
