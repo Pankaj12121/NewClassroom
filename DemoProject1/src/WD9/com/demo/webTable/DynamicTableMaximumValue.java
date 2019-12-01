@@ -1,6 +1,7 @@
 package WD9.com.demo.webTable;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,7 +29,7 @@ public class DynamicTableMaximumValue {
 	
     public static void main(String[] args) throws ParseException {
     	WebDriver wd;
-		System.setProperty("webdriver.chrome.driver","C:\\Grid\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","E:\\Grid\\chromedriver.exe");
 		 wd= new ChromeDriver();
 		 wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 wd.get("http://money.rediff.com/gainers/bsc/daily/groupa?"); 

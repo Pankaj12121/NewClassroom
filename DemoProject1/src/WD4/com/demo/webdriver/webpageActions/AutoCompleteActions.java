@@ -44,6 +44,7 @@ public class AutoCompleteActions {
 		textBoxElement.clear();
 		textBoxElement.sendKeys("a");
 		selectAutoCompleteElement("Java");
+		
 	}
 
 	public void selectAutoCompleteElement(String textToSelect) {

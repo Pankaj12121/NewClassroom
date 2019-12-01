@@ -18,7 +18,7 @@ public class HashMaPExample {
 		certificationCost.put("NSE", 2000); 
 		certificationCost.put("Agile", 16000);
 		// let's try to remove element from Hashmap using Map.remove(Object key) method // this will not work, will throw ConcurrentModfiicationException 
-		Set<String> setOfCertifications = certificationCost.keySet(); 
+		Set<String> setOfCertifications = certificationCost.v.keySet(); 
 		// Map - before removing a mapping System.out.println("before: " + certificationCost); // let's use Iterator to remove a key from HashMap while iterating 
 		Iterator<String> iterator = setOfCertifications.iterator();//certificationCost.keySet().iterator(); 
 		while(iterator.hasNext()){ 

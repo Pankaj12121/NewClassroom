@@ -57,7 +57,7 @@ public class FileUpload {
 	String Password;
 	String randomString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	int empIDs;
-	String filetobeUploaded = "C:\\Tosca\\download.jfif";
+	String filetobeUploaded = "C:\\Tosca\\SelDownload\\SampleVideo_1280x720_1mb.mp4";
 
 	public FileUpload(WebDriver driver) {
 		driver = this.driver;

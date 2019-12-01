@@ -16,7 +16,6 @@ public class CreatePolicy implements PolicyInterface {
 			break;
 
 		case "Chrome":
-
 			System.out.println("Launch Browser- Chrome");
 			break;
 

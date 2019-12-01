@@ -50,8 +50,9 @@ public class ParallelExecution {
  		driver.navigate().to(url);		
 		
 	}
-	@AfterSuite
+	@AfterTest(alwaysRun=true)
 	public void closeBrowser() {
 		driver.quit();
+		System.out.println("Browser Closed");
 	}
 }

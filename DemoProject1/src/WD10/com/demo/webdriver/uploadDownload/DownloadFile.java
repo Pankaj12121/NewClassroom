@@ -29,7 +29,7 @@ public class DownloadFile {
 		System.setProperty("webdriver.chrome.driver", "\\Grid\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver(caps);
 		driver.get("http://sample-videos.com/");
-		WebElement clickLink= driver.findElement(By.xpath("//a[contains(@href, 'video/mp4/720/big_buck_bunny_720p_1mb.mp4')]"));
+		WebElement clickLink= driver.findElement(By.xpath("//a[contains(@href, 'big_buck_bunny_')]"));
 		clickLink.click();
 		Thread.sleep(3000);
 		driver.close();

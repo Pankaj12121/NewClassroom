@@ -16,7 +16,7 @@ public class RemoteWebDrivers {
 	public static void main(String[] args) throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
 
-		ChromeOptions options = new ChromeOptions();
+		/*ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
 		options.addArguments("ignore-certificate-errors");
 
@@ -26,8 +26,8 @@ public class RemoteWebDrivers {
 		prefs.put("download.default_directory", "C:\\Downloads");
 		options.setExperimentalOption("prefs", prefs);
 
-		
-		capabilities.setCapability(ChromeOptions.CAPABILITY,options);
+		DesiredCapabilities cap= new DesiredCapabilities().chrome();*/
+		//capabilities.setCapability(ChromeOptions.CAPABILITY,options);
 		String gridURL="http://localhost:4444/wd/hub";
 		WebDriver driver = new RemoteWebDriver(new URL(gridURL), capabilities);
 		driver.get("https://www.amazon.com/");

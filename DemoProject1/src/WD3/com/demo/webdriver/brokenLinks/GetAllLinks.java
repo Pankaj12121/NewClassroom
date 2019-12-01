@@ -18,7 +18,7 @@ public class GetAllLinks {
 		
 		List<WebElement> linkList= driver.findElements(By.tagName("a"));
 		
-		
+	
 		for(WebElement link:linkList){
 			String linkText= link.getText();
 			System.out.println(linkText);

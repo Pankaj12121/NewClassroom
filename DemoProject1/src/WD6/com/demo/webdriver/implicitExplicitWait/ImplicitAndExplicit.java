@@ -65,7 +65,7 @@ public class ImplicitAndExplicit {
 		System.setProperty("webdriver.chrome.driver","\\Grid\\chromedriver.exe");
 		driver = new ChromeDriver(capabilities);
 		/*******************************Implicit Wait*************************************************/		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		/*******************************Implicit Wait*************************************************/	
 		PageFactory.initElements(driver, this);
 		String baseUrl = "https://opensource-demo.orangehrmlive.com/";
