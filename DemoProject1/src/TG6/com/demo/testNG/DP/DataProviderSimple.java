@@ -34,7 +34,7 @@ public class DataProviderSimple {
 
 		System.setProperty("webdriver.gecko.driver","\\Grid\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://opensource.demo.orangehrmlive.com/";
+		String baseUrl = "https://opensource-demo.orangehrmlive.com/";
 		driver.get(baseUrl);
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
