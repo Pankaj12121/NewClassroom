@@ -1,11 +1,13 @@
 package WD10.com.demo.webdriver.uploadDownload;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.omg.SendingContext.RunTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -65,7 +67,7 @@ public class FileUpload {
 
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
 
@@ -102,14 +104,21 @@ public class FileUpload {
 		return sb;
 	}
 
-	public void fillempDetails() {
+	public void fillempDetails() throws IOException, InterruptedException {
 		empFirstName.sendKeys(randomStringGen());
 		empMiddleName.sendKeys(randomStringGen());
 		empLastName.sendKeys(randomStringGen());
 		empIDs = randomIntGen();
 		String IDs = String.valueOf(empIDs);
 		empID.sendKeys(IDs);
-		uploadFile.sendKeys(filetobeUploaded);
+		//AutoIT way
+		
+		uploadFile.click();
+		Thread.sleep(2000);
+		Runtime.getRuntime().exec("E:\\Zoom_AutoITScript\\zoomLaunch.exe");
+		Thread.sleep(9000);
+		//Through sendKeys
+		//uploadFile.sendKeys(filetobeUploaded);
 		empLoginDetailsChkBox.click();
 		empUserName.sendKeys(randomStringGen());
 		Password = randomStringGen();
