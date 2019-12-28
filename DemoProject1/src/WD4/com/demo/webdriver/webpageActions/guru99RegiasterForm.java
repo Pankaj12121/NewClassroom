@@ -96,9 +96,9 @@ public class guru99RegiasterForm {
 	}
 
 	public void fillRegistrationForm() {
-		getAllIframes();
-		adWindowHandling();
-		closePopUP(popUp, "Flash popup");
+		//getAllIframes();
+		//adWindowHandling();
+		//closePopUP(popUp, "Flash popup");
 		click(reset, "Reset Button");
 		selectItemFromDropDown(title, "Lord", "Title Drop Down");
 		sendKeys(firstName, "Ramesh", "First Name Text Box");

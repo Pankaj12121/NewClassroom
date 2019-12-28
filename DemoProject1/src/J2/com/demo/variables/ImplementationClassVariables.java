@@ -15,7 +15,7 @@ public class ImplementationClassVariables {
 /*************************************Local***********************************************************/
 		LocalVariables localVar= new LocalVariables();
 		
-		localVar.Salary(salesbonus);
+		localVar.salary(salesbonus);
 		
 /*************************************static***********************************************************/
 		StaticVariables staticVar= new StaticVariables(rollNo,studentName);

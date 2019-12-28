@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.omg.SendingContext.RunTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -110,11 +111,14 @@ public class FileUpload {
 		empIDs = randomIntGen();
 		String IDs = String.valueOf(empIDs);
 		empID.sendKeys(IDs);
-		//uploadFile.sendKeys(filetobeUploaded);
+		//AutoIT way
+		
 		uploadFile.click();
 		Thread.sleep(2000);
-		Runtime.getRuntime().exec("E://Grid//Demo.exe");
-		Thread.sleep(7000);
+		Runtime.getRuntime().exec("E:\\Zoom_AutoITScript\\zoomLaunch.exe");
+		Thread.sleep(9000);
+		//Through sendKeys
+		//uploadFile.sendKeys(filetobeUploaded);
 		empLoginDetailsChkBox.click();
 		empUserName.sendKeys(randomStringGen());
 		Password = randomStringGen();
