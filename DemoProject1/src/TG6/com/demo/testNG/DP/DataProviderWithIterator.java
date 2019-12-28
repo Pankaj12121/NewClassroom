@@ -63,7 +63,7 @@ public class DataProviderWithIterator {
 	@DataProvider(name="DataInput")
 	public Iterator<Object[][]> fetchData() throws IOException{
 		ArrayList<Object[][]> myData = new ArrayList<Object[][]>();
-		FileInputStream fis = new FileInputStream("C:\\Users\\pankajs\\Desktop\\TestData.xlsx");
+		FileInputStream fis = new FileInputStream("E:\\TestData.xlsx");
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		Sheet sh = wb.getSheet("Sheet1");
 		int numOfRows = sh.getPhysicalNumberOfRows();

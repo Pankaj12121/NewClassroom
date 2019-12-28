@@ -67,7 +67,7 @@ public class TestNGReport {
 		try {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH.mm.ss");
 			LocalDateTime now = LocalDateTime.now();
-
+			
 			String fileWithPath= TestNGReportPath + "\\SnapShotOfFailedScenarios\\" +"_" + dtf.format(now)+".png";
 		//	String fileWithPath="G:\\TestExceutionResults\\SnapShotOfFailedScenarios\\" + scenarioID + "_" + dtf.format(now)+".png";
 			TakesScreenshot scrShot =((TakesScreenshot)driver);
